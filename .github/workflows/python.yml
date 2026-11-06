@@ -15,3 +15,8 @@ jobs:
         working-directory: python
       - run: python -m pytest --junit-xml=report.xml
         working-directory: python
+      - name: Upload test report
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: python/report.xml
